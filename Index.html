@@ -1,0 +1,247 @@
+﻿<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title>Web technológiák I. beadandó</title>
+   <link href="styles/styles.css" rel="stylesheet" />
+   <script src="scripts/form.js"></script>
+   <script src="scripts/list.js"></script>
+   <script src="scripts/jquery-3.3.1.min.js"></script>
+   <script src="scripts/animations.js">
+      
+   </script>
+   <style>
+      body {
+         margin: 0 auto;
+         width: 100%;
+         max-width: 1020px;
+         min-width: 640px;
+      }
+      body > header {
+         margin: 0;
+         width: 100%;
+         overflow: hidden;
+      }
+      body > nav {
+         width: 20%;
+         float: left;
+         margin: 0 0 0 1.5%;
+      }
+      body > article#about {
+         width: 51%;
+         float: left;
+         margin: 0 3% 0 3%;
+      }
+      body > aside {
+         width: 20%;
+         float: left;
+         margin: 0 1.5% 0 0;
+      }
+      article.syllabus {
+         float: left;
+         width: 74.5%;
+         margin: 0 4% 0 0%;
+      }
+      body > footer {
+         width: 100%;
+         clear: left;
+      }
+
+      .column {
+         float: left;
+         width: 31%;
+      }
+
+      .row::after {
+         content: "";
+         clear: both;
+         display: table;
+      }
+
+      .gallery {
+         width: 100px;
+         height: 100px;
+         opacity: 0.7;
+      }
+   </style>
+</head>
+<body>
+   <header>
+      <img src="resources/image.jpg" alt="Should be an image here..." />
+   </header>
+   <nav>
+      <h1>Links</h1>
+      <ul>
+         <li class="newgroup"><a href="https://www.mediamarkt.hu/">Meadia Markt</a></li>
+         <li class="newgroup"><a href="https://edigital.hu/">Extreme Digital</a></li>
+         <li class="newgroup"><a href="https://euronics.hu/">Euronics</a></li>
+         <li class="newgroup"><a href="https://www.emag.hu/">EMAG</a></li>
+         <li class="newgroup"><a href="https://www.alza.hu/">alza</a></li>
+      </ul>
+   </nav>
+   <article id="about">
+      <h1>Eget Nulla Facilisi</h1>
+      <p class="firstLineDifferent">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Nunc sed augue lacus viverra vitae congue eu consequat ac. 
+         Libero id faucibus nisl tincidunt eget nullam. Ultrices tincidunt arcu non sodales. Facilisis 
+         mauris sit amet massa vitae tortor.
+      </p>
+      <p class="firstLineDifferent">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+         ut labore et dolore magna aliqua. Sagittis purus sit amet volutpat consequat. A cras semper
+         auctor neque vitae. Vulputate eu scelerisque felis imperdiet proin fermentum. Ornare quam 
+         viverra orci sagittis eu volutpat odio.
+      </p>
+      <h2>Donec</h2>
+      <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+         ut labore et dolore magna aliqua. Erat nam at lectus urna duis convallis convallis tellus.
+      </p>
+      <label>Item to add:</label>
+      <input id="listItemToAdd" type="text"/>
+      <button id="addButton" onclick="AddItemToList()">Add</button>
+      <ul id="list">
+         <li>
+            <strong>Nulla</strong>
+         </li>
+         <li>
+            <strong>Vitae</strong>
+         </li>
+         <li>
+            <strong>Porta</strong>
+         </li>
+      </ul>
+      <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua.
+      </p>
+      <h2>Semper Feugiat</h2>
+      <div class="row" style="text-align: center;">
+         <div class="column" style="text-align: center;">
+            <img class="gallery" id="picture1" src="resources/pattern1.jpg">
+         </div>
+         <div class="column" style="text-align: center;">
+            <img class="gallery" id="picture2" src="resources/pattern2.png">
+         </div>
+         <div class="column" style="text-align: center;">
+            <img class="gallery" id="picture3" src="resources/pattern3.jpg">
+         </div>
+      </div>
+      <h2>Registration Form</h2>
+      <form name="form" action="" method="post" class="center">
+         <table>
+            <tr>
+               <td><label for="firstname" class="required">First Name:</label></td>
+               <td><input id="firstname" name="firstname" type="text" required/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorFirstname"></label></td>
+            </tr>
+            <tr>
+               <td><label for="lasttname" class="required">Last Name:</label></td>
+               <td><input id="lastname" name="lastname" type="text" required/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorLastname"></label></td>
+            </tr>
+            <tr>
+               <td><label for="age">Age:</label></td>
+               <td><input id="age" name="age" type="number"/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorAge"></label></td>
+            </tr>
+            <tr>
+               <td><label for="emal" class="required">E-mail:</label></td>
+               <td><input id="email" name="email" type="text" required/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorEmail"></label></td>
+            </tr>
+            <tr>
+               <td><label for="sex">Sex:</label></td>
+               <td><input id="sex" name="sex" type="text"/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorSex"></label></td>
+            </tr>
+            <tr>
+               <td><label for="password" class="required" type="password">Password:</label></td>
+               <td><input id="password" name="password"  type="password" required/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorPassword"></label></td>
+            </tr>
+            <tr>
+               <td><label for="cPassword" class="required">Confirm password:</label></td>
+               <td><input id="cPassword" name="cPassword"  type="password" required/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorCpassword"></label></td>
+            </tr>
+            <tr>
+               <td><label for="accept" class="required">Accept agreement</label></td>
+               <td><input id="accept" name="accept" type="checkbox" required/></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><label class="formError" id="errorAccept"></label></td>
+            </tr>
+            <tr>
+               <td><label class="formError" style="opacity: 0;">placeholder</label></td>
+               <td><button id="submit" name="submit" type="submit" onclick="ValidateForm()">Submit</button></td>
+            </tr>
+         </table>
+      </form>
+   </article>
+   <aside>
+      <h1>Arcu</h1>
+      <blockquote> 
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. At lectus urna duis convallis convallis tellus. 
+         Pellentesque diam volutpat commodo sed.
+      </blockquote>
+      <blockquote>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Praesent semper feugiat nibh sed. Lectus sit amet est placerat 
+         in egestas erat imperdiet.      
+      </blockquote>
+      <blockquote>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Laoreet sit amet cursus sit amet dictum sit. 
+         In arcu cursus euismod quis.
+      </blockquote>
+      <blockquote> 
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Quisque egestas diam in arcu cursus euismod. Nisi scelerisque 
+         eu ultrices vitae auctor eu augue.
+      </blockquote>
+      <blockquote>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Eget felis eget nunc lobortis mattis aliquam faucibus. Mus 
+         mauris vitae ultricies leo integer malesuada nunc vel risus.
+      </blockquote>
+      <hr/>
+      <div class="row" style="text-align: center;">
+         <div class="column" style="text-align: center;">
+            <button id="fadeInButton">Show</button>
+         </div>
+         <div class="column" style="text-align: center;">
+            <button id="fadeOutButton">Hide</button>
+         </div>
+      </div>
+      <h3 id="fadein" hidden>This text has just appeared</h3>
+   </aside>
+   <footer>
+      Tisza Marcell &#8226; NLVHSR &#8226; Programtervező informatikus
+   </footer>
+</body>
+</html>
